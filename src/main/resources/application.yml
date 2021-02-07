@@ -1,0 +1,14 @@
+resilience4j.timelimiter:
+  instances:
+    orderService:
+      timeoutDuration: 2s
+      cancelRunningFuture: true #whether cancel should be called on the running future
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
