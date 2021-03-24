@@ -46,6 +46,7 @@ public class OrderController {
         return CompletableFuture.supplyAsync(slowService::slowMethod);
     }
     public ResponseEntity<String> timeLimitFallback(RequestNotPermitted t) throws InterruptedException {
+        logger.info("Inside timeLimitFallback");
         return new ResponseEntity<String>(" orderService is full and does not permit further calls", HttpStatus.TOO_MANY_REQUESTS);
     }
 
